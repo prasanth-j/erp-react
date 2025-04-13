@@ -1,3 +1,43 @@
 {
-  "app_name": "ERP360"
+  "app_name": "ERP360",
+  "common": {
+    "back": "Back",
+    "create": "Create",
+    "edit": "Edit",
+    "update": "Update",
+    "delete": "Delete",
+    "footer_copyright": "© 2025 :app"
+  },
+  "error": {
+    "not_found": {
+      "title": "404",
+      "oops": "Oops!",
+      "message": "Page not found.",
+      "description": "The page you’re looking for doesn’t exist or has been moved.",
+      "go_home": "Go Home"
+    }
+  },
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome to :app",
+    "go_to_employees": "Go to Employees"
+  },
+  "department": {
+    "title": "Departments"
+  },
+  "employee": {
+    "title": "Employees",
+    "list_title": "Employee List",
+    "create_button": "Create Employee",
+    "name": "Name",
+    "email": "Email",
+    "actions": "Actions",
+    "loading": "Loading...",
+    "not_found": "No employees found.",
+    "create_title": "Create Employee",
+    "edit_title": "Edit Employee"
+  },
+  "project": {
+    "title": "Projects"
+  }
 }

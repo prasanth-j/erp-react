@@ -1,14 +1,15 @@
 import {Link, useLocation} from "react-router-dom";
 import {trans} from "../helpers/helper.js";
+import LanguageSelector from "../components/ui/LanguageSelector.jsx";
 
 function AppLayout({children}) {
     const location = useLocation();
 
     const navItems = [
-        {name: "Home", path: "/"},
-        {name: "Departments", path: "/departments"},
-        {name: "Employees", path: "/employees"},
-        {name: "Projects", path: "/projects"},
+        {name: trans('home.title'), path: "/"},
+        {name: trans('department.title'), path: "/departments"},
+        {name: trans('employee.title'), path: "/employees"},
+        {name: trans('project.title'), path: "/projects"},
     ];
 
     const isActive = (path) => {
@@ -29,9 +30,13 @@ function AppLayout({children}) {
                     <ul className="nav nav-pills">
                         {navItems.map((navItem) => (
                             <li className="nav-item" key={navItem.path}>
-                                <Link to={navItem.path} className={`nav-link ${isActive(navItem.path)}`}>{navItem.name}</Link>
+                                <Link to={navItem.path}
+                                      className={`nav-link ${isActive(navItem.path)}`}>{navItem.name}</Link>
                             </li>
                         ))}
+                        <li className="nav-item">
+                            <LanguageSelector/>
+                        </li>
                     </ul>
                 </header>
             </div>
@@ -42,7 +47,7 @@ function AppLayout({children}) {
 
             <div className="container">
                 <footer className="border-top py-3 my-4">
-                    <p className="text-center text-body-secondary">&copy; 2025 {trans('app_name')}</p>
+                    <p className="text-center text-body-secondary">{trans('common.footer_copyright', {app: trans('app_name')})}</p>
                 </footer>
             </div>
         </div>
