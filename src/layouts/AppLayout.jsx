@@ -30,8 +30,7 @@ function AppLayout({children}) {
                     <ul className="nav nav-pills">
                         {navItems.map((navItem) => (
                             <li className="nav-item" key={navItem.path}>
-                                <Link to={navItem.path}
-                                      className={`nav-link ${isActive(navItem.path)}`}>{navItem.name}</Link>
+                                <Link to={navItem.path} className={`nav-link ${isActive(navItem.path)}`}>{navItem.name}</Link>
                             </li>
                         ))}
                         <li className="nav-item">

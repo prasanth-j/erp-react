@@ -11,9 +11,9 @@ function LanguageSelector() {
     };
 
     return (
-        <div className="dropdown">
+        <div className="dropdown ps-2">
             <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {selectedLang === 'en' ? 'English' : 'தமிழ்'}
+                {selectedLang === 'ta' ? 'தமிழ்' : 'English'}
             </button>
             <ul className="dropdown-menu">
                 <li>
