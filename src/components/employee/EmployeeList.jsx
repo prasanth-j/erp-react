@@ -37,46 +37,48 @@ function EmployeeList() {
                             <Link to="/employees/create" className="btn btn-sm btn-primary">Add Employee</Link>
                         </div>
                         <div className="card-body">
-                            <table className="table table-bordered">
-                                <thead className="table-light">
-                                    <tr>
-                                        <th className="text-end">#</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {loading ? (
+                            <div className="table-responsive">
+                                <table className="table table-bordered">
+                                    <thead className="table-light">
                                         <tr>
-                                            <td colSpan="4" className="text-center py-4">
-                                                <div className="spinner-border text-primary" role="status">
-                                                    <span className="visually-hidden">Loading...</span>
-                                                </div>
-                                            </td>
+                                            <th className="text-end">#</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Actions</th>
                                         </tr>
-                                    ) : (
-                                        <>
-                                            {employees.map(employee => (
-                                                <tr key={employee.id}>
-                                                    <td className="text-end">{employee.id}</td>
-                                                    <td>{employee.firstName + " " + employee.lastName}</td>
-                                                    <td>{employee.email}</td>
-                                                    <td>
-                                                        <Link to={`/employees/${employee.id}/edit`} className="btn btn-sm btn-warning me-2">Edit</Link>
-                                                        <button onClick={() => handleDelete(employee.id)} className="btn btn-sm btn-danger">Delete</button>
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                            {employees.length === 0 && (
-                                                <tr>
-                                                    <td colSpan="4" className="text-center">No employees found.</td>
-                                                </tr>
-                                            )}
-                                        </>
-                                    )}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        {loading ? (
+                                            <tr>
+                                                <td colSpan="4" className="text-center py-4">
+                                                    <div className="spinner-border text-primary" role="status">
+                                                        <span className="visually-hidden">Loading...</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ) : (
+                                            <>
+                                                {employees.map(employee => (
+                                                    <tr key={employee.id}>
+                                                        <td className="text-end">{employee.id}</td>
+                                                        <td>{employee.firstName + " " + employee.lastName}</td>
+                                                        <td>{employee.email}</td>
+                                                        <td>
+                                                            <Link to={`/employees/${employee.id}/edit`} className="btn btn-sm btn-warning me-2">Edit</Link>
+                                                            <button onClick={() => handleDelete(employee.id)} className="btn btn-sm btn-danger">Delete</button>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                                {employees.length === 0 && (
+                                                    <tr>
+                                                        <td colSpan="4" className="text-center">No employees found.</td>
+                                                    </tr>
+                                                )}
+                                            </>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

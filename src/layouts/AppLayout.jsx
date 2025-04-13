@@ -6,7 +6,9 @@ function AppLayout({children}) {
 
     const navItems = [
         {name: "Home", path: "/"},
+        {name: "Departments", path: "/departments"},
         {name: "Employees", path: "/employees"},
+        {name: "Projects", path: "/projects"},
     ];
 
     const isActive = (path) => {
